@@ -1,0 +1,86 @@
+<!doctype html>
+<!-- Avisa o navegador que o documento usa HTML moderno -->
+<html lang="pt-BR">
+<head>
+  <!-- Configurações da página: acentos e tamanho em celulares -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Noite Sonora Discos — vitrine</title>
+
+  <!-- Liga o arquivo de estilos (CSS), que está na mesma pasta -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Liga o arquivo JavaScript; defer = só roda depois que o HTML for lido -->
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <!-- Cabeçalho com título e apresentação da loja -->
+  <header>
+    <div class="container">
+      <h1>Noite Sonora Discos</h1>
+      <p>Vinis, CDs e fitas para quem vive a música do jeito antigo.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Discos disponíveis</h2>
+
+    <!-- Aviso visível sobre o desconto -->
+    <p class="aviso">Nas compras acima de R$ 100,00, você ganha 10% de desconto!</p>
+
+    <!-- Lista de produtos: cada article é um cartão -->
+    <div class="produtos">
+
+      <!-- Produto 1 -->
+      <article class="produto">
+        <h3>Vinil de Rock Clássico</h3>
+        <p>Guitarras pesadas e o som dos anos 70 em disco de 12 polegadas.</p>
+        <p class="preco">R$ 129,90</p>
+        <!-- O id precisa ser único: é por ele que o JavaScript acha o botão -->
+        <button id="adicionar-rock" type="button">Adicionar vinil de rock</button>
+      </article>
+
+      <!-- Produto 2 -->
+      <article class="produto">
+        <h3>Vinil de Jazz</h3>
+        <p>Improvisos e clima de madrugada para ouvir com calma.</p>
+        <p class="preco">R$ 80,00</p>
+        <button id="adicionar-jazz" type="button">Adicionar vinil de jazz</button>
+      </article>
+
+      <!-- Produto 3 -->
+      <article class="produto">
+        <h3>CD Pop Anos 80</h3>
+        <p>Coletânea com sucessos para dançar e cantar junto.</p>
+        <p class="preco">R$ 39,90</p>
+        <button id="adicionar-cd" type="button">Adicionar CD pop</button>
+      </article>
+
+      <!-- Produto 4: o novo produto pedido no exercício -->
+      <article class="produto">
+        <h3>Fita Cassete Lo-fi</h3>
+        <p>Batidas tranquilas gravadas em fita, ótima para colecionar.</p>
+        <p class="preco">R$ 20,00</p>
+        <button id="adicionar-cassete" type="button">Adicionar fita cassete</button>
+      </article>
+
+    </div>
+
+    <!-- Resumo da seleção: os span são os textos que o JavaScript vai trocar -->
+    <section class="resumo" aria-labelledby="titulo-resumo">
+      <h2 id="titulo-resumo">Sua seleção</h2>
+      <p>Quantidade: <span id="quantidade">0</span></p>
+      <p>Subtotal: <span id="subtotal">R$ 0,00</span></p>
+      <p>Desconto: <span id="desconto">R$ 0,00</span></p>
+      <p class="total-final">Total final: <span id="total">R$ 0,00</span></p>
+      <button id="limpar" type="button">Limpar seleção</button>
+      <!-- Mensagens para o usuário (aria-live faz leitores de tela anunciarem a mudança) -->
+      <p id="mensagem" role="status" aria-live="polite">Nenhum disco adicionado.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p class="container">Projeto didático. Não realiza compras ou pagamentos.</p>
+  </footer>
+</body>
+</html>

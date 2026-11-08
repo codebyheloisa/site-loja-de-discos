@@ -1,0 +1,106 @@
+/* Faz borda e espaçamento ficarem dentro da largura de cada elemento */
+* { box-sizing: border-box; }
+
+/* Aparência geral da página: fundo escuro e texto claro */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #0d0d12;
+  color: #e8e6f0;
+}
+
+/* Classe usada para centralizar e limitar a largura do conteúdo */
+.container {
+  width: min(100% - 32px, 1000px);
+  margin: 0 auto;
+}
+
+/* Cabeçalho e rodapé pretos, com uma linha roxa */
+header, footer {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 24px 0;
+  border-bottom: 2px solid #7c3aed;
+}
+
+footer {
+  border-bottom: none;
+  border-top: 2px solid #7c3aed;
+}
+
+main { padding: 28px 0; }
+
+/* Títulos em lilás claro */
+h2 { color: #c4b5fd; }
+
+/* Caixa do aviso de desconto */
+.aviso {
+  background-color: #2a2208;
+  border: 1px solid #fbbf24;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-weight: bold;
+  color: #fbbf24;
+}
+
+/* Organiza os produtos em 2 colunas (são 4 produtos) */
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Estilo compartilhado pelos cartões e pelo resumo */
+.produto, .resumo {
+  background-color: #17171f;
+  border: 1px solid #2c2c3a;
+  border-radius: 12px;
+  padding: 22px;
+}
+
+/* Preço grande, em negrito e amarelo */
+.preco {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fbbf24;
+}
+
+/* Linha do total final em destaque */
+.total-final {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Aparência de todos os botões */
+button {
+  background-color: #7c3aed;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Cor do botão quando o mouse passa por cima */
+button:hover { background-color: #6d28d9; }
+
+/* Contorno amarelo visível quando se navega com a tecla Tab */
+button:focus-visible {
+  outline: 3px solid #fbbf24;
+  outline-offset: 4px;
+}
+
+.resumo { margin-top: 24px; }
+
+/* O # seleciona pelo id; min-height evita a página "pular" quando a mensagem muda */
+#mensagem {
+  min-height: 2em;
+  font-weight: bold;
+}
+
+/* Em telas estreitas (até 700px), os cartões ficam em uma coluna */
+@media (max-width: 700px) {
+  .produtos { grid-template-columns: 1fr; }
+}
